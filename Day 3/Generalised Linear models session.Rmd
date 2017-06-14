@@ -1,7 +1,7 @@
 ---
 title: "Project Pheonix learn R "
 subtitle: "Generalised linear models"
-output: word_document
+output: word_document--
 ---
 
 
@@ -29,9 +29,7 @@ plot(0:10, sapply(split(examdata$pass,examdata$tuition),mean))
 This certainly indicates that more tuition results in higher chances of passing the exam. We could fit this formally as
 
 ```{r eval=T}
-exammodel <- glm(examdata$pass~tuition,
-data=examdata,
-family="binomial")
+exammodel <- glm(examdata$pass~tuition,data=examdata,family="binomial")
 summary(exammodel)
 ```
 Due to the nature of the link function used in a logistic regression we need to transform the coefficients returned into odds ratios. We do this by taking the exponetial of them as follows
@@ -43,8 +41,8 @@ exp(coef(exammodel))
 #This is a better way
 exammodel %>%   #our logisitic regression model object
   coef() %>%    #get the coefficients
-    exp()       #exponentiate them 
-
+    exp() %>%    #exponentiate them 
+    round(2)    # round our number to two decimal places
 ```
 We may want to round these to three decimal places we could type
 ```{r eval=T}
@@ -56,45 +54,66 @@ Try doing the above using pipes.
 We could get confidence intervals in the same way as before, but we need to again transform them into odds ratios. 
 ```{r eval=T}
 exammodel %>%     #This is our model object
-  confint() %>%   #This calculates the confidence intervals
+  confint() %>%   #This calculates the confidence intervals (default is 95%)
     exp()         #This exponentiates 
+
+# or without pipes
+exp(confint(exammodel))
 ```
+It's the tuition value we are interested in...
+2.5% gives us the lower limit
+97.5% gives us the upper limit
+All these values are above 1 which suggests that tuition is a good thing....
+If our 95% CI includes 1, then we couldn't exlude that our factor had no influence. 
+
+## Include star sign
 We can include information on the star sign now.
 ```{r eval=T}
-exammodelplus <- glm(pass~tuition + starsign,
-data=examdata,
-family="binomial")
+exammodelplus <- glm(pass~tuition + starsign,data=examdata, family="binomial")
 
 summary(exammodelplus)
 
 exammodelplus %>%
   coef()  %>%
     exp()
-    
-    exammodelplus %>%
+
+exp(coef(exammodelplus))
+
+exammodelplus %>%
   confint()  %>%
     exp()
-    
+
+# changing the reference object in our data
+examdata$starsign <- relevel(examdata$starsign, ref="Taurus") 
+
+# changing the reference object in our data
+examdata$starsign <- relevel(examdata$starsign, ref="Cancer") 
+
+# sum to zero contrast - advanced info
 ```
 
 
 We can create our own function here if we want to 
 
 ```{r eval=T}
-logregressout <- function(logregressmodel){
-OR <- logregressmodel %>%
-  coef() %>%
-    exp() %>%
+logregressout <- function(temp){
+  
+   OR <- temp %>%
+      coef() %>%
+      exp() %>%
       round(2)
       
-OR.CI <- logregressmodel %>%
-  confint() %>%
-    exp() %>%
+   OR.CI <- temp %>%
+      confint() %>%
+      exp() %>%
       round(2)
       
-return(data.frame(OR=OR,OR.CI=OR.CI))
+return(data.frame(Odds_Ratio = OR, ConfInt=OR.CI))
 }
 logregressout(exammodelplus)
+
+logregressmodel(exammodelplus)
+
 ```
 
 We can check model performance simply by exploring predicted values versus observed. We can take a predicted probability of an event of >0.5 as meaning that we predict that case will have an event.
