@@ -27,7 +27,7 @@ When you click the **Knit** button a document will be generated that includes bo
 ```{r, echo = FALSE}
 library(ggplot2)
 fileName <- "Namibia_region_urbanRural.csv"
-path <- "/Users/paulbrennan/Documents/learnR/data/"
+path <- "/Users/Mark/Documents/GitHub/learnR/data/"
 data <- read.csv(file = paste0(path,fileName))
 ggplot(data = data[data$region=="Namibia",],
        aes( x = as.factor(Date), 

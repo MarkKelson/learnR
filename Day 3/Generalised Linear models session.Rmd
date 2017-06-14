@@ -1,5 +1,6 @@
 ---
-title: "Generalised linear models"
+title: "Project Pheonix learn R "
+subtitle: "Generalised linear models"
 output: word_document
 ---
 
