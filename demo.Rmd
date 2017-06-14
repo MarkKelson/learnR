@@ -1,0 +1,51 @@
+---
+title: "Project Phoenix learnR UNAM"
+subtitle: "R Markdown & Github"
+author: "Dr Paul Brennan - Cardiff University"
+date: "14 June 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown
+
+This is an R Markdown presentation. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document.
+
+## We used Rmarkdown
+
+- All our handouts were prepared with Rmd
+- They are available on Github <https://github.com/MarkKelson/learnR/>
+
+
+## Here is a graph from yesterday
+
+```{r, echo = FALSE}
+library(ggplot2)
+fileName <- "Namibia_region_urbanRural.csv"
+path <- "/Users/paulbrennan/Documents/learnR/data/"
+data <- read.csv(file = paste0(path,fileName))
+ggplot(data = data[data$region=="Namibia",],
+       aes( x = as.factor(Date), 
+            y = Value,
+            fill = residence)) +
+  geom_bar(stat = "identity")
+```
+
+## Here is the code
+
+```{r, echo=TRUE, eval=FALSE}
+ggplot(data = data[data$region=="Namibia",],
+       aes( x = as.factor(Date), 
+            y = Value,
+            fill = residence)) +
+  geom_bar(stat = "identity")
+```
+
+## Lot's of online resources
+- Check out the Rmarkdown Cheatsheet
+- Look at the R-Studio website
