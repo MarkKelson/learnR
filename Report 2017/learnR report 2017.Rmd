@@ -1,0 +1,61 @@
+---
+title: "learnR report 2017"
+author: "Mark Kelson"
+date: "16 June 2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Following a scoping visit conducted by Mark Kelson (MK) over June 2016, a priority objective was identified to deliver training in statistical software. The choice of software is the free, open-source, enterprise-ready software R. Over the course of the following 12 months MK organized a team of statistical and R experts to develop a three day introductory training course in R. Monthly skype contacts with our lead local organiser Lilian Pazvakawambwa (LP) were maintained over this period. In addition Dave Gillespie (DG) and Paul Brennan (PB) joined MK to travel to UNAM to deliver the training. Support was also received from Nelago Indongo (NI) of UNAM and Daniel Farewll (DF) and Chao Huang (CH) of Cardiff University.
+	
+##Results
+
+The course ran for three days from 12-14th of June in the computing lab WXXXX in the science block. This room easily hosted the 20 delegates that signed up for the course. Delegates, their affiliations (where known) and contact details are supplied in Appendix 1. 
+The timetable of the event is provided in table 1. 
+
+
+learnR timetable||
+-----|------|-----
+Day 1 ||
+ Time |	Session|	Lead
+09.00 – 09.30|	Installation |	All
+09.30 – 10.00|	Ice-breaker	|MK
+10:00 – 11:00|	Introduction to R|	MK
+11:00 – 11.30|	Coffee	|
+11.30 – 12.30|	Getting data into R|	MK
+12.30 – 13.30|	Lunch	|
+13.30 – 14.30|	Dataframes	|DG
+14.30 – 15:00|	Coffee	|
+15:00 – 16.00|	Manipulating data|	MK
+16:00 – 16:30|	Questions & summary|	ALL
+Day 2 | |
+09.30 – 11.00|	Graphing/visualization and exploring data Part I	|PB
+11:00 – 11.30|	Coffee	
+11.30 – 12.30|	Graphing/visualization and exploring data Part II|	PB
+12.30 – 13.30|	Lunch	|
+13.30 – 14.30|	Linear models part I	|MK
+14.30 – 15:00|	Coffee	|
+15:00 – 16.00|	Linear models Part II|	MK
+16:00 – 16:30|	Questions & summary	|ALL
+Day 3 ||
+09.30 – 11:00|	Generalised linear models|	MK
+11:00 – 11.30|	Coffee	
+11.30 – 12.30|	Delegate data sharing	|UNAM 
+12.30 – 13.30|	Lunch	
+13.30 – 14.30|	Reporting, scientific writing, interpretation|	DG
+14.30 – 15:00|	Coffee	
+15:00 – 16.00|	Markdown, trouble shooting, reusable workflows|	PB
+16:00 – 16:30|	Questions/troubleshooting/summary	|MK
+
+
+##Appendix 1
+```{r eval=T}
+delegates <- read.csv("/Users/Mark/Documents/GitHub/learnR/data/delegates.csv")
+delegates[1:3]
+```
+
