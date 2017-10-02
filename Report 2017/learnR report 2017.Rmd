@@ -12,10 +12,10 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Introduction
 
 Following a scoping visit conducted by Mark Kelson (MK) over June 2016, a priority objective was identified to deliver training in statistical software. The choice of software is the free, open-source, enterprise-ready software R. Over the course of the following 12 months MK organized a team of statistical and R experts to develop a three day introductory training course in R. Monthly skype contacts with our lead local organiser Lilian Pazvakawambwa (LP) were maintained over this period. In addition Dave Gillespie (DG) and Paul Brennan (PB) joined MK to travel to UNAM to deliver the training. Support was also received from Nelago Indongo (NI) of UNAM and Daniel Farewll (DF) and Chao Huang (CH) of Cardiff University.
-	
-##Results
 
-The course ran for three days from 12-14th of June in the computing lab WXXXX in the science block. This room easily hosted the 20 delegates that signed up for the course. Delegates, their affiliations (where known) and contact details are supplied in Appendix 1. 
+##Training
+
+The course ran for three days from 12-14th of June in a computing lab in the science block. 
 The timetable of the event is provided in table 1. 
 
 
@@ -52,8 +52,34 @@ Day 3 ||
 15:00 – 16.00|	Markdown, trouble shooting, reusable workflows|	PB
 16:00 – 16:30|	Questions/troubleshooting/summary	|MK
 
+Prior to the training a short questionnaire was ciruclated aimed at gauging the participants confidence in using R. The questionnaire is included in Appendix 1. A similar follow-up questionnaire was adminstered immediately after training.
+
+##Results
+The room easily hosted the 20 delegates that signed up for the course. Delegates, their affiliations (where known) and contact details are supplied in Appendix 2. 
+
+The results of the training are illustrated in figure xxxx
+This shows xxxxx
+
+Furthermore, we were successful in engaging the participants to lead a session of the training by asking them to deliver short presentations on their work. This revealed that some of the participants were already using R at a very high level and demonstrated great existing capacity in UNAM. 
+
+##Future recommendations
+Here are some reflections for future organisers. 
+
+1. Catering proved quite tricky to organise. Sara Kamati was the person who sorted out it out eventually for us. This is essential to the smooth running of the course. 
+
+2. The room is adequate, although the computers did not all have administrator privileges set-up. A person from library services with access to provide this was a course delegate, so we were lucky. Even still, this took up lots of time.
+
+3. The UNAM R community is strong and all that is required is a catalyst to get the community sharing.
+
+4. Material should be relatively self-contained. I should have spent more time getting the libraries all on USB sticks.
+
+5. Bring more USB sticks
+
+
 
 ##Appendix 1
+
+##Appendix 2
 ```{r eval=T}
 delegates <- read.csv("/Users/Mark/Documents/GitHub/learnR/data/delegates.csv")
 delegates[1:3]
