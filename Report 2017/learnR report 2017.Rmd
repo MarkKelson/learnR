@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Introduction
 
-Following a scoping visit conducted by Mark Kelson (MK) over June 2016, a priority objective was identified to deliver training in statistical software. The choice of software is the free, open-source, enterprise-ready software R. Over the course of the following 12 months MK organized a team of statistical and R experts to develop a three day introductory training course in R. Monthly skype contacts with our lead local organiser Lilian Pazvakawambwa (LP) were maintained over this period. In addition Dave Gillespie (DG) and Paul Brennan (PB) joined MK to travel to UNAM to deliver the training. Support was also received from Nelago Indongo (NI) of UNAM and Daniel Farewll (DF) and Chao Huang (CH) of Cardiff University.
+Following a scoping visit conducted by Mark Kelson (MK) over June 2016, a priority objective was identified to deliver training in statistical software. The choice of software is the free, open-source, enterprise-ready software R. Over the course of the following 12 months MK organized a team of statistical and R experts to develop a three day introductory training course in R. Monthly skype contacts with our lead local organiser Lilian Pazvakawambwa (LP) were maintained over this period. In addition Dave Gillespie (DG) and Paul Brennan (PB) joined MK to travel to UNAM to deliver the training. Support was also received from Nelago Indongo (NI) of UNAM and Daniel Farewell (DF) and Chao Huang (CH) of Cardiff University.
 
 ##Training
 
